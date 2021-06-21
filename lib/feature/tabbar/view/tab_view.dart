@@ -1,7 +1,8 @@
-import 'package:e_commerce_sample/core/base/base_stateless.dart';
-import 'package:e_commerce_sample/feature/home/view/home_view.dart';
-import 'package:e_commerce_sample/feature/tabbar/model/tab_model.dart';
+import '../../../core/base/base_stateless.dart';
+import '../../home/view/home_view.dart';
+import '../model/tab_model.dart';
 import 'package:flutter/material.dart';
+import 'package:kartal/kartal.dart';
 
 class TabView extends BaseStateless {
   @override
@@ -23,6 +24,7 @@ class TabView extends BaseStateless {
       child: Scaffold(
         bottomNavigationBar: BottomAppBar(
           child: TabBar(
+            indicatorColor: context.colorScheme.background,
             tabs: List.generate(
               _items.length,
               (index) => Tab(

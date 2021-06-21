@@ -18,10 +18,11 @@ class AppTheme extends IAppTheme {
   @override
   ThemeData get theme => ThemeData(
         colorScheme: _colorScheme,
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(color: Colors.grey),
         tabBarTheme: _tabBarTheme,
         appBarTheme: AppBarTheme(
-          backgroundColor: Colors.red
+          backgroundColor: Colors.transparent,
+          elevation: 0
         )
       );
 
@@ -42,7 +43,7 @@ class AppTheme extends IAppTheme {
       );
 
   TabBarTheme get _tabBarTheme => TabBarTheme(
-        labelColor: Colors.white,
+        labelColor: Colors.black,
         unselectedLabelColor: Colors.grey,
       );
 }

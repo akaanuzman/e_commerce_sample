@@ -11,5 +11,5 @@ class ApplicationConstants {
 
   ApplicationConstants.init();
 
-  final String servicePath = "https://fakestoreapi.com";
+  final String servicePath = "https://fakestoreapi.com/";
 }
