@@ -1,9 +1,11 @@
+import 'package:flutter/material.dart';
+import 'package:mobx/mobx.dart';
+
 import '../../../core/init/network/network_manager.dart';
 import '../model/home_model.dart';
 import '../service/IProductService.dart';
 import '../service/product_service.dart';
-import 'package:flutter/material.dart';
-import 'package:mobx/mobx.dart';
+
 part 'home_viewmodel.g.dart';
 
 class HomeViewModel = _HomeViewModelBase with _$HomeViewModel;
