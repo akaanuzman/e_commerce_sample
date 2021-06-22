@@ -29,7 +29,7 @@ class AppTheme extends IAppTheme {
   ColorScheme get _colorScheme => ColorScheme(
         primary: Colors.white,
         primaryVariant: Colors.white10,
-        secondary: Colors.yellow,
+        secondary: Colors.black26,
         secondaryVariant: Colors.deepPurple,
         surface: Colors.red,
         background: Colors.black,
