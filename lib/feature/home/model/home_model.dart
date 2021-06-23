@@ -11,6 +11,9 @@ class HomeModel {
   String? category;
   String? image;
 
+  @JsonKey(ignore: true)
+  double count = 0;
+
   HomeModel(
       {this.id,
       this.title,
@@ -23,4 +26,27 @@ class HomeModel {
       _$HomeModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$HomeModelToJson(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+
+    return other is HomeModel &&
+        other.title == title &&
+        other.id == id &&
+        other.description == description &&
+        other.category == category &&
+        other.price == price &&
+        other.image == image;
+  }
+
+  @override
+  int get hashCode {
+    return title.hashCode ^
+        id.hashCode ^
+        description.hashCode ^
+        category.hashCode ^
+        image.hashCode ^
+        price.hashCode;
+  }
 }

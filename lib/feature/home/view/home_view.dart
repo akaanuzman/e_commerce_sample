@@ -1,3 +1,5 @@
+import '../../../product/manager/shop_manager.dart';
+
 import '../../../core/components/text/head_line5_text.dart';
 import '../../../core/constants/string/home_string_constants.dart';
 import '../../../product/components/item_card.dart';
@@ -5,6 +7,7 @@ import '../../../product/components/item_card.dart';
 import '../viewmodel/home_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:provider/provider.dart';
 
 class HomeView extends StatelessWidget {
   final HomeViewModel _viewModel = HomeViewModel();
@@ -20,7 +23,7 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: _buildAppBarTitle,
-        actions: [_buildActionChip],
+        actions: [_buildActionChip(context)],
       ),
       body: _buildBody,
     );
@@ -31,8 +34,8 @@ class HomeView extends StatelessWidget {
         fontWeight: FontWeight.bold,
       );
 
-  ActionChip get _buildActionChip => ActionChip(
-        label: Text("0.0\$"),
+  ActionChip _buildActionChip(BuildContext context) => ActionChip(
+        label: Text('\$ ${context.watch<ShopManager>().totalMoney}'),
         avatar: Icon(Icons.shopping_bag),
         onPressed: () {},
       );

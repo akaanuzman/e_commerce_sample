@@ -1,7 +1,10 @@
+import '../manager/shop_manager.dart';
+
 import '../../core/components/text/bold_text.dart';
 import '../../feature/home/model/home_model.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
+import 'package:provider/provider.dart';
 
 class ItemCard extends StatefulWidget {
   final HomeModel viewModel;
@@ -24,6 +27,11 @@ class _ItemCardState extends State<ItemCard> {
   }
 
   void isIncrementChange() {
+    if (!isIncrementOpen) {
+      context.read<ShopManager>().addShopItem(widget.viewModel);
+    } else {
+      context.read<ShopManager>().removeShopItem(widget.viewModel);
+    }
     setState(() {
       isIncrementOpen = !isIncrementOpen;
     });
@@ -72,7 +80,10 @@ class _ItemCardState extends State<ItemCard> {
           ),
           IconButton(
             onPressed: isIncrementChange,
-            icon: Icon(Icons.shopping_bag),
+            icon: Icon(
+              Icons.shopping_bag,
+              size: 32.5,
+            ),
           )
         ],
       );
