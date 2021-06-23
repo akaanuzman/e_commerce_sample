@@ -43,7 +43,7 @@ class HomeView extends StatelessWidget {
               SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
           itemCount: _viewModel.items.length,
           itemBuilder: (context, index) =>
-              ItemCard(model: _viewModel.items[index]),
+              ItemCard(viewModel: _viewModel.items[index]),
         ),
       );
 }

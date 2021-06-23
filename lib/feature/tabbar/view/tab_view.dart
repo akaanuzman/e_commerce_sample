@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:kartal/kartal.dart';
+
 import '../../../core/base/base_stateless.dart';
 import '../../home/view/home_view.dart';
 import '../model/tab_model.dart';
-import 'package:flutter/material.dart';
-import 'package:kartal/kartal.dart';
 
 class TabView extends BaseStateless {
   @override
