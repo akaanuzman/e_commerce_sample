@@ -1,16 +1,15 @@
-# e_commerce_sample
+# Weather App
 
-A new Flutter project.
+## Packages 
+I used the "kartal" and "flutter_glow" packages in this project because it provides convenience in design.
+<br/>
+If you want to reach the "kartal" package:
+<br/>
+<br/>
+<a href="https://pub.dev/packages/kartal"><img src="https://i.imgur.com/G5MQMcb.png" title="Kartal Package"/></a>
 
-## Getting Started
+## Home Preview
+<a href="https://media.giphy.com/media/wMU3EjYDtIr5i3rMc7/giphy.gif"><img src="https://media.giphy.com/media/wMU3EjYDtIr5i3rMc7/giphy.gif" title="Home Preview"/></a>
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Basket Preview
+<a href="https://media.giphy.com/media/J4YH0x5jwePOKWovHT/giphy.gif"><img src="https://media.giphy.com/media/J4YH0x5jwePOKWovHT/giphy.gif" title="Basket Preview"/></a>
