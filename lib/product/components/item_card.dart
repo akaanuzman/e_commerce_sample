@@ -1,10 +1,10 @@
-import '../manager/shop_manager.dart';
-
-import '../../core/components/text/bold_text.dart';
-import '../../feature/home/model/home_model.dart';
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
 import 'package:provider/provider.dart';
+
+import '../../core/components/text/bold_text.dart';
+import '../../feature/home/model/home_model.dart';
+import '../manager/shop_manager.dart';
 
 class ItemCard extends StatefulWidget {
   final HomeModel viewModel;
@@ -17,7 +17,7 @@ class ItemCard extends StatefulWidget {
 class _ItemCardState extends State<ItemCard> {
   late final HomeModel model;
   bool isIncrementOpen = false;
-  double get getHeight => isIncrementOpen ? context.dynamicHeight(0.12) : 0;
+  double get getHeight => isIncrementOpen ? context.dynamicHeight(0.15) : 0;
   double get getWidth => isIncrementOpen ? context.dynamicHeight(0.05) : 0;
 
   @override
@@ -102,7 +102,7 @@ class _ItemCardState extends State<ItemCard> {
                 flex: 4,
                 child: _buildIconButtonIncrement(),
               ),
-              Spacer(),
+              BoldText(data: model.count.toString().substring(0, 1)),
               Expanded(
                 flex: 4,
                 child: _buildIconButtonRemove(),
@@ -114,14 +114,18 @@ class _ItemCardState extends State<ItemCard> {
 
   IconButton _buildIconButtonIncrement() => IconButton(
         padding: EdgeInsets.zero,
-        onPressed: () {},
+        onPressed: () {
+          context.read<ShopManager>().incrementItem(model);
+        },
         icon: Icon(Icons.add),
       );
 
   IconButton _buildIconButtonRemove() {
     return IconButton(
       padding: EdgeInsets.zero,
-      onPressed: () {},
+      onPressed: () {
+        context.read<ShopManager>().deIncrementItem(model);
+      },
       icon: Icon(Icons.remove),
     );
   }

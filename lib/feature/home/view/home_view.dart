@@ -21,13 +21,15 @@ class HomeView extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: _buildAppBarTitle,
-        actions: [_buildActionChip(context)],
-      ),
+      appBar: _buildAppBar(context),
       body: _buildBody,
     );
   }
+
+  AppBar _buildAppBar(BuildContext context) => AppBar(
+        title: _buildAppBarTitle,
+        actions: [_buildActionChip(context)],
+      );
 
   Headline5Text get _buildAppBarTitle => Headline5Text(
         data: homeStringContants.title,

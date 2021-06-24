@@ -25,10 +25,19 @@ class ShopManager extends ChangeNotifier {
     if (!shopPhotoItems.contains(model)) {
       Logger().wtf("Item has not found !");
     } else {
-      shopPhotoItems.singleWhere((element) => element.id == model.id).count =
-          model.count;
+      shopPhotoItems.singleWhere((element) => element.id == model.id).count++;
     }
-    shopPhotoItems.remove(model);
+    sumTotalMoney();
+    notifyListeners();
+  }
+
+  void deIncrementItem(HomeModel model) {
+    if (!shopPhotoItems.contains(model)) {
+      Logger().wtf("Item has not found !");
+    } else {
+      shopPhotoItems.singleWhere((element) => element.id == model.id).count--;
+    }
+    sumTotalMoney();
     notifyListeners();
   }
 
