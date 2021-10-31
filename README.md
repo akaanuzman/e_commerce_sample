@@ -3,10 +3,9 @@
 ## 🎁 Packages 
 I used the "kartal" package in this project because it provides convenience in design.
 <br/>
-If you want to reach the "kartal" package:
+If you want to reach the ["kartal"](https://pub.dev/packages/kartal) package:
 <br/>
 <br/>
-<a href="https://pub.dev/packages/kartal"><img src="https://i.imgur.com/G5MQMcb.png" title="Kartal Package"/></a>
 
 ## 🔍 Home Preview
 <a href="https://media.giphy.com/media/wMU3EjYDtIr5i3rMc7/giphy.gif"><img src="https://media.giphy.com/media/wMU3EjYDtIr5i3rMc7/giphy.gif" title="Home Preview"/></a>
