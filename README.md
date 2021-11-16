@@ -1,6 +1,6 @@
-## 🔥 Weather App
+# 🔥 Weather App
 
-### 📱 State Management
+## 📱 State Management
 I used provider state management in this proeject.
 <img src="https://koenig-media.raywenderlich.com/uploads/2019/11/provider_tree.png" width=800 height=500>
 
@@ -64,7 +64,7 @@ I used MVVM software architectural pattern in this project.
 
 <img src="https://api.hackathonturkiye.com/media/hosting/images/mvvm.jpg">
 
-### 🎁 Packages 
+## 🎁 Packages 
 I used the "kartal" package in this project because it provides convenience in design.
 <br/>
 If you want to reach the ["kartal"](https://pub.dev/packages/kartal) package:
