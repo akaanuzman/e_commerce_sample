@@ -1,4 +1,4 @@
-# 🔥 Weather App
+# 🔥 E-commerce App
 
 ## 📱 State Management
 I used provider state management in this proeject.
