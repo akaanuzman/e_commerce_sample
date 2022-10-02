@@ -1,79 +1,18 @@
-# 🔥 E-commerce App
+## 📱 E-commerce App
 
-## 📱 State Management
-I used provider state management in this proeject.
-<img src="https://koenig-media.raywenderlich.com/uploads/2019/11/provider_tree.png" width=800 height=500>
-
-```dart
-import '../../feature/home/model/home_model.dart';
-import 'package:flutter/material.dart';
-import 'package:logger/logger.dart';
-
-class ShopManager extends ChangeNotifier {
-  List<HomeModel> shopPhotoItems = [];
-
-  double totalMoney = 0;
-
-  void addShopItem(HomeModel model) {
-    model.count++;
-    shopPhotoItems.add(model);
-    sumTotalMoney();
-    notifyListeners();
-  }
-
-  void removeShopItem(HomeModel model) {
-    model.count = 0;
-    shopPhotoItems.remove(model);
-    sumTotalMoney();
-    notifyListeners();
-  }
-
-  void incrementItem(HomeModel model) {
-    if (!shopPhotoItems.contains(model)) {
-      Logger().wtf("Item has not found !");
-    } else {
-      shopPhotoItems.singleWhere((element) => element.id == model.id).count++;
-    }
-    sumTotalMoney();
-    notifyListeners();
-  }
-
-  void deIncrementItem(HomeModel model) {
-    if (!shopPhotoItems.contains(model)) {
-      Logger().wtf("Item has not found !");
-    } else {
-      shopPhotoItems.singleWhere((element) => element.id == model.id).count--;
-    }
-    sumTotalMoney();
-    notifyListeners();
-  }
-
-  void sumTotalMoney() {
-    totalMoney = shopPhotoItems.fold(
-        0,
-        (previousValue, element) =>
-            previousValue + element.price! * element.count);
-    notifyListeners();
-  }
-}
-```
-
-## 📚 Software Architectural Pattern
-I used MVVM software architectural pattern in this project.
-<br>
-
-<img src="https://api.hackathonturkiye.com/media/hosting/images/mvvm.jpg">
-
-## 🎁 Packages 
-I used the "kartal" package in this project because it provides convenience in design.
-<br/>
-If you want to reach the ["kartal"](https://pub.dev/packages/kartal) package:
-<br/>
-<br/>
-
-## 🔍 Preview
-### 💣 Home Preview
+### 🔎 Preview
+#### 💣 Home Preview
 <a href="https://media.giphy.com/media/wMU3EjYDtIr5i3rMc7/giphy.gif"><img src="https://media.giphy.com/media/wMU3EjYDtIr5i3rMc7/giphy.gif" title="Home Preview"/></a>
 
-### 💣 Basket Preview
+#### 💣 Basket Preview
 <a href="https://media.giphy.com/media/J4YH0x5jwePOKWovHT/giphy.gif"><img src="https://media.giphy.com/media/J4YH0x5jwePOKWovHT/giphy.gif" title="Basket Preview"/></a>
+
+
+### 📁 Description
+You can add your product to the basket with the "+" icon in the upper right corner of the products and increase or decrease the number of your products from the animatic menu that appears. When you add or delete each product, the basket value in the upper right is updated. You can check the products in your basket by clicking in the bottom right tab.
+
+### 📶 API
+[Fake store api](https://fakestoreapi.com/) is used in this project.Data in the API is parsed with the [json_serializable](https://pub.dev/packages/json_serializable) and [json_annotation](https://pub.dev/packages/json_annotation) methods. The ["dio"](https://pub.dev/packages/dio) package is used to send requests to the API.
+
+### 🧑🏻‍💻 Coding
+I tried to write the code of this project as clean as possible. I used MVVM as the software architecture model. In terms of folders, the project proceeds through three main folders. The core folder contains structures such as extensions, singleton classes, base classes, and navigation routes that I use in every project. The Properties folder is the part where each screen is separated according to the MVMM software architecture model, and the design and API integration is done. The product folder is the part where the atomic widgets or components I have prepared or my managers are located. Used as provider state management.
